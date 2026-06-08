@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Beauty Essence | Mohana Kalyani — Home Beauty Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blush:#F7E0E6;--blush-light:#FDF3F5;--blush-mid:#F0C8D4;
+  --rose:#C4849A;--rose-dark:#9B5C73;--rose-gold:#C8977A;
+  --white:#FFFFFF;--cream:#FDF8F9;
+  --text-dark:#2E1A22;--text-mid:#6B4455;--text-light:#A07585;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',sans-serif;
+  --wa:#25D366;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-dark);background:var(--white);overflow-x:hidden;opacity:0;animation:bodyReveal 1s ease 0.1s forwards}
+@keyframes bodyReveal{from{opacity:0}to{opacity:1}}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--blush-light)}
+::-webkit-scrollbar-thumb{background:var(--rose);border-radius:3px}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;
+  background:rgba(255,255,255,0.72);
+  backdrop-filter:blur(24px) saturate(200%);
+  -webkit-backdrop-filter:blur(24px) saturate(200%);
+  border-bottom:1px solid rgba(255,255,255,0.5);
+  box-shadow:0 2px 24px rgba(196,132,154,0.08);
+  transition:padding 0.3s,box-shadow 0.3s}
+nav.scrolled{padding:13px 60px;box-shadow:0 4px 30px rgba(196,132,154,0.14)}
+.nav-logo{font-family:var(--serif);font-size:1.65rem;font-weight:600;color:var(--text-dark);text-decoration:none;letter-spacing:0.02em}
+.nav-logo span{color:var(--rose)}
+.nav-links{display:flex;gap:34px;list-style:none;align-items:center}
+.nav-links a{font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;position:relative;transition:color 0.3s}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--rose);transition:width 0.3s}
+.nav-links a:hover{color:var(--rose-dark)}.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--rose)!important;color:var(--white)!important;padding:9px 22px!important;border-radius:30px;transition:background 0.3s,transform 0.2s!important}
+.nav-cta::after{display:none!important}.nav-cta:hover{background:var(--rose-dark)!important;transform:translateY(-1px)}
+.nav-hiring{color:var(--rose-dark)!important;font-weight:600!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--rose-dark);border-radius:2px;transition:0.3s}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);padding:28px 28px 36px;flex-direction:column;gap:0;z-index:99;border-bottom:1px solid rgba(196,132,154,0.15)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:0.95rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(196,132,154,0.1);display:block;transition:color 0.3s}
+.mobile-menu a:hover{color:var(--rose)}
+.mobile-menu .m-book{margin-top:20px;background:var(--rose);color:var(--white)!important;text-align:center;border-radius:30px;padding:14px!important;border:none}
+.mobile-menu .m-hiring{color:var(--rose-dark)!important;font-weight:600!important}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#FDF0F3 0%,#FBE5EC 45%,#F5D0DC 100%);position:relative;overflow:hidden;padding:120px 60px 80px}
+.hero::before{content:'';position:absolute;top:-120px;right:-100px;width:520px;height:520px;background:radial-gradient(circle,rgba(196,132,154,0.18) 0%,transparent 70%);border-radius:50%;animation:float 7s ease-in-out infinite}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(200,151,122,0.13) 0%,transparent 70%);border-radius:50%;animation:float 9s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+.hero-content{position:relative;z-index:2;max-width:620px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(196,132,154,0.12);border:1px solid rgba(196,132,154,0.3);border-radius:30px;padding:7px 18px;font-size:0.77rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose-dark);margin-bottom:26px;animation:fadeUp 0.8s ease both}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5rem);font-weight:400;line-height:1.12;color:var(--text-dark);margin-bottom:22px;animation:fadeUp 0.8s 0.15s ease both}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero-tagline{font-size:1rem;font-weight:300;color:var(--text-mid);line-height:1.8;margin-bottom:40px;max-width:470px;animation:fadeUp 0.8s 0.28s ease both}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp 0.8s 0.4s ease both}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--rose);color:var(--white);padding:15px 34px;border-radius:50px;font-size:0.87rem;font-weight:500;letter-spacing:0.07em;text-decoration:none;border:none;cursor:pointer;transition:background 0.3s,transform 0.2s,box-shadow 0.3s;box-shadow:0 8px 28px rgba(196,132,154,0.4)}
+.btn-primary:hover{background:var(--rose-dark);transform:translateY(-2px);box-shadow:0 14px 36px rgba(196,132,154,0.5)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--rose-dark);padding:15px 34px;border-radius:50px;font-size:0.87rem;font-weight:500;letter-spacing:0.07em;text-decoration:none;border:1.5px solid var(--rose);cursor:pointer;transition:background 0.3s,color 0.3s,transform 0.2s}
+.btn-outline:hover{background:var(--rose);color:var(--white);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:36px;margin-top:50px;animation:fadeUp 0.8s 0.52s ease both}
+.stat-num{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--rose-dark);display:block}
+.stat-label{font-size:0.73rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);margin-top:3px}
+.hero-card{position:absolute;right:7%;top:50%;transform:translateY(-50%);border-radius:24px;padding:30px 26px;width:270px;animation:fadeUp 0.8s 0.6s ease both;z-index:2}
+.hero-card-title{font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--text-dark);margin-bottom:16px}
+.service-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(247,224,230,0.8);border-radius:20px;padding:7px 13px;font-size:0.8rem;color:var(--rose-dark);font-weight:500;margin:3px;border:1px solid rgba(255,255,255,0.5)}
+.hero-card-hours{margin-top:18px;padding-top:18px;border-top:1px solid rgba(240,200,212,0.4);font-size:0.82rem}
+.hours-label{color:var(--text-light);margin-bottom:5px}
+.hours-val{color:var(--text-dark);font-weight:500}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTION BASE ── */
+section{padding:88px 60px}
+.section-label{display:inline-block;font-size:0.73rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rose);font-weight:600;margin-bottom:12px}
+.section-title{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:400;color:var(--text-dark);line-height:1.2;margin-bottom:16px}
+.section-sub{font-size:0.97rem;color:var(--text-light);font-weight:300;line-height:1.8;max-width:520px}
+.text-center{text-align:center}.text-center .section-sub{margin:0 auto}
+
+/* ── SERVICES ── */
+#services{background:var(--cream)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:50px}
+.service-card{background:var(--white);border-radius:20px;padding:34px 26px;border:1px solid rgba(196,132,154,0.12);transition:transform 0.4s cubic-bezier(.17,.67,.32,1),box-shadow 0.3s,border-color 0.3s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--rose-gold));transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+.service-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 28px 60px rgba(196,132,154,0.2);border-color:rgba(196,132,154,0.28)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:58px;height:58px;background:var(--blush);border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:20px;transition:background 0.3s,transform 0.3s}
+.service-card:hover .service-icon{background:var(--blush-mid);transform:rotate(-5deg) scale(1.1)}
+.service-name{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--text-dark);margin-bottom:9px}
+.service-desc{font-size:0.86rem;color:var(--text-light);line-height:1.75}
+.service-list{margin-top:14px;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.service-list li{background:var(--blush-light);color:var(--text-mid);font-size:0.75rem;padding:4px 11px;border-radius:20px;font-weight:500}
+
+/* ── ABOUT ── */
+#about{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about-visual{position:relative}
+.about-img-box{border-radius:30px;height:480px;position:relative;overflow:hidden;box-shadow:0 30px 80px rgba(155,92,115,0.2)}
+.exp-badge{position:absolute;top:22px;left:22px;border-radius:18px;padding:16px 20px;z-index:3;text-align:center}
+.exp-badge .exp-num{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--rose-dark);line-height:1;display:block}
+.exp-badge .exp-txt{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-mid);font-weight:600;display:block;margin-top:2px}
+.owner-card{position:absolute;bottom:-18px;right:-18px;border-radius:18px;padding:18px 22px;min-width:190px;z-index:3}
+.owner-name{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--text-dark)}
+.owner-title{font-size:0.75rem;color:var(--rose);font-weight:500;letter-spacing:0.06em;margin-top:3px}
+.owner-stars{color:#E8A87C;font-size:0.8rem;letter-spacing:2px;margin-top:6px}
+.about-content .section-sub{max-width:100%;margin-bottom:18px}
+.about-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.about-features li{display:flex;align-items:flex-start;gap:13px;font-size:0.88rem;color:var(--text-mid);line-height:1.6}
+.about-features li::before{content:'✦';color:var(--rose);font-size:0.73rem;margin-top:3px;flex-shrink:0}
+
+/* ── WHY ── */
+#why{background:linear-gradient(135deg,var(--blush-light),var(--cream))}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px;margin-top:50px}
+.why-card{text-align:center;padding:34px 18px;border-radius:20px;border:1px solid rgba(255,255,255,0.5);transition:transform 0.4s cubic-bezier(.17,.67,.32,1),box-shadow 0.3s}
+.why-card:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 22px 55px rgba(196,132,154,0.18)}
+.why-icon{font-size:2.1rem;margin-bottom:14px;display:block;transition:transform 0.3s}
+.why-card:hover .why-icon{transform:scale(1.2) rotate(5deg)}
+.why-title{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--text-dark);margin-bottom:9px}
+.why-text{font-size:0.83rem;color:var(--text-light);line-height:1.7}
+
+/* ── TESTIMONIALS ── */
+#testimonials{background:var(--white)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;margin-top:50px}
+.testimonial-card{background:var(--blush-light);border-radius:20px;padding:30px 26px;border:1px solid rgba(196,132,154,0.1);position:relative;transition:transform 0.4s cubic-bezier(.17,.67,.32,1),box-shadow 0.3s}
+.testimonial-card:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(196,132,154,0.16)}
+.quote-mark{font-family:var(--serif);font-size:4.5rem;line-height:0.5;color:var(--blush-mid);margin-bottom:18px;display:block}
+.testimonial-text{font-size:0.93rem;color:var(--text-mid);line-height:1.8;font-style:italic;font-family:var(--serif);font-weight:300;margin-bottom:22px}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.author-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;flex-shrink:0;color:var(--white);background:var(--rose)}
+.author-name{font-weight:600;font-size:0.87rem;color:var(--text-dark)}
+.author-service{font-size:0.73rem;color:var(--rose);font-weight:500;letter-spacing:0.04em;margin-top:2px}
+.author-stars{font-size:0.72rem;color:#E8A87C;letter-spacing:2px;margin-top:2px}
+.no-reviews{text-align:center;padding:48px;color:var(--text-light);font-style:italic;font-family:var(--serif);font-size:1.1rem}
+
+/* ── BOOK / CTA ── */
+#book{background:linear-gradient(135deg,#2E1A22 0%,#4D2C3D 100%);color:var(--white);text-align:center;position:relative;overflow:hidden}
+#book::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(196,132,154,0.22),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(200,151,122,0.13),transparent 60%)}
+#book .section-label{color:var(--blush-mid)}
+#book .section-title{color:var(--white)}
+#book .section-sub{color:rgba(255,255,255,0.62);margin:0 auto 36px}
+.book-content{position:relative;z-index:2}
+.divider-line{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--rose),transparent);margin:22px auto}
+.whatsapp-btn{display:inline-flex;align-items:center;gap:12px;background:var(--wa);color:var(--white);padding:17px 38px;border-radius:50px;font-size:0.97rem;font-weight:500;letter-spacing:0.05em;text-decoration:none;transition:background 0.3s,transform 0.2s,box-shadow 0.3s;box-shadow:0 10px 36px rgba(37,211,102,0.4);margin-bottom:20px}
+.whatsapp-btn:hover{background:#1ebe5d;transform:translateY(-3px);box-shadow:0 18px 48px rgba(37,211,102,0.5)}
+.book-note{font-size:0.8rem;color:rgba(255,255,255,0.42);letter-spacing:0.05em;margin-bottom:36px}
+.review-prompt{border-radius:16px;padding:22px 28px;display:inline-block;margin-top:8px}
+.review-prompt p{color:rgba(255,255,255,0.7);font-size:0.88rem;margin-bottom:14px}
+.btn-review{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--blush-mid);border:1.5px solid rgba(196,132,154,0.45);padding:11px 26px;border-radius:30px;font-size:0.84rem;font-weight:500;text-decoration:none;cursor:pointer;transition:background 0.3s,color 0.3s,border-color 0.3s;font-family:var(--sans)}
+.btn-review:hover{background:var(--rose);color:var(--white);border-color:var(--rose)}
+
+/* ── REVIEW FORM ── */
+#leave-review{background:var(--cream)}
+.review-form-wrap{max-width:640px;margin:50px auto 0;background:var(--white);border-radius:24px;padding:44px;box-shadow:0 12px 48px rgba(155,92,115,0.1);border:1px solid rgba(196,132,154,0.12)}
+.form-group{margin-bottom:22px}
+.form-label{display:block;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);margin-bottom:8px}
+.form-input{width:100%;padding:13px 16px;border:1.5px solid rgba(196,132,154,0.25);border-radius:12px;font-family:var(--sans);font-size:0.9rem;color:var(--text-dark);background:var(--blush-light);transition:border-color 0.3s,box-shadow 0.3s;outline:none}
+.form-input:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(196,132,154,0.15);background:var(--white)}
+textarea.form-input{resize:vertical;min-height:110px;line-height:1.6}
+select.form-input{cursor:pointer}
+.stars-row{display:flex;gap:8px;margin-top:4px}
+.star-btn{background:none;border:none;font-size:2rem;cursor:pointer;color:#D8C0C8;transition:color 0.2s,transform 0.1s;padding:2px;line-height:1}
+.star-btn.lit{color:#E8A87C}
+.star-btn:hover{transform:scale(1.15)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.btn-submit{width:100%;padding:15px;background:var(--rose);color:var(--white);border:none;border-radius:50px;font-family:var(--sans);font-size:0.95rem;font-weight:500;letter-spacing:0.07em;cursor:pointer;transition:background 0.3s,transform 0.2s,box-shadow 0.3s;margin-top:8px;box-shadow:0 8px 24px rgba(196,132,154,0.35)}
+.btn-submit:hover{background:var(--rose-dark);transform:translateY(-2px);box-shadow:0 14px 32px rgba(196,132,154,0.45)}
+.success-msg{display:none;text-align:center;padding:18px;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);border-radius:14px;margin-top:20px;color:#1a7a42;font-weight:500;font-size:0.93rem}
+.error-msg{display:none;text-align:center;padding:14px;background:rgba(196,84,84,0.08);border:1px solid rgba(196,84,84,0.25);border-radius:12px;margin-top:14px;color:#9B3C3C;font-size:0.87rem}
+
+/* ── FOOTER ── */
+footer{background:#1C1014;color:rgba(255,255,255,0.45);padding:44px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.footer-logo{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--white)}
+.footer-logo span{color:var(--rose)}
+.footer-tagline{font-size:0.77rem;color:rgba(255,255,255,0.3);margin-top:3px}
+.footer-founder{font-size:0.77rem;color:rgba(255,255,255,0.35);margin-top:2px}
+.footer-links{display:flex;gap:26px;list-style:none}
+.footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.42);text-decoration:none;letter-spacing:0.06em;transition:color 0.3s}
+.footer-links a:hover{color:var(--rose)}
+.footer-copy{font-size:0.75rem;text-align:right}
+
+/* ── FADE-IN SCROLL ANIMATIONS ── */
+.fade-in{opacity:0;transform:translateY(50px) scale(0.97);transition:opacity 0.8s cubic-bezier(.17,.67,.32,1),transform 0.8s cubic-bezier(.17,.67,.32,1)}
+.fade-in.visible{opacity:1;transform:translateY(0) scale(1)}
+.fade-left{opacity:0;transform:translateX(-50px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-left.visible{opacity:1;transform:translateX(0)}
+.fade-right{opacity:0;transform:translateX(50px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-right.visible{opacity:1;transform:translateX(0)}
+.fade-scale{opacity:0;transform:scale(0.88);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-scale.visible{opacity:1;transform:scale(1)}
+
+/* ── SCROLL PROGRESS ── */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#C4849A,#C8977A);z-index:9999;transition:width 0.1s}
+
+/* ── CURSOR GLOW ── */
+.cursor-glow{position:fixed;width:260px;height:260px;border-radius:50%;background:rgba(196,132,154,.12);filter:blur(80px);pointer-events:none;z-index:1;transition:left 0.08s,top 0.08s}
+
+/* ── PARALLAX ── */
+.parallax{transform:translateY(var(--parallax,0px));will-change:transform}
+
+/* ── COUNTER ── */
+.counter{font-variant-numeric:tabular-nums}
+
+/* ── HIRING PAGE OVERLAY ── */
+#hiringPage{position:fixed;inset:0;z-index:200;overflow-y:auto;box-sizing:border-box;
+  background:linear-gradient(140deg,#f9e8f0 0%,#f3d5e5 35%,#ead0df 70%,#f5e0eb 100%)!important;
+  backdrop-filter:blur(30px) saturate(180%);
+  -webkit-backdrop-filter:blur(30px) saturate(180%);
+  transform:translateX(100%);transition:transform 0.5s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;align-items:center;padding:80px 20px 40px}
+#hiringPage.open{transform:translateX(0)}
+.hiring-close{position:fixed;top:22px;right:28px;background:var(--rose);color:var(--white);border:none;border-radius:50%;width:44px;height:44px;font-size:1.4rem;cursor:pointer;z-index:201;display:flex;align-items:center;justify-content:center;transition:background 0.3s,transform 0.2s;box-shadow:0 4px 16px rgba(196,132,154,0.4)}
+.hiring-close:hover{background:var(--rose-dark);transform:rotate(90deg)}
+
+/* Hiring header glass card */
+.hiring-header{
+  background:rgba(255,255,255,0.18)!important;
+  backdrop-filter:blur(40px) saturate(260%) brightness(1.06)!important;
+  -webkit-backdrop-filter:blur(40px) saturate(260%) brightness(1.06)!important;
+  border:1px solid rgba(255,255,255,0.45)!important;
+  box-shadow:0 16px 48px rgba(196,132,154,0.15),inset 0 1.5px 0 rgba(255,255,255,0.8)!important;
+  border-radius:24px;padding:36px 40px!important;overflow:hidden;position:relative;text-align:center;margin-bottom:48px;width:100%;max-width:580px;
+}
+.hiring-header::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:50%;
+  background:linear-gradient(180deg,rgba(255,255,255,0.4) 0%,transparent 100%);
+  pointer-events:none;z-index:0;
+}
+.hiring-header>*{position:relative;z-index:1}
+.hiring-header .section-label{display:block;margin-bottom:10px}
+.hiring-header h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:400;color:var(--text-dark);line-height:1.2;margin-bottom:14px}
+.hiring-header p{color:var(--text-light);font-size:0.97rem;line-height:1.8}
+
+/* Progress bar glass track */
+.progress-bar{
+  width:100%;max-width:580px;margin-bottom:36px;box-sizing:border-box;
+  background:rgba(255,255,255,0.18)!important;
+  backdrop-filter:blur(24px) saturate(200%)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(200%)!important;
+  border:1px solid rgba(255,255,255,0.4)!important;
+  border-radius:20px;padding:14px 20px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.7),0 6px 20px rgba(196,132,154,0.1)!important;
+}
+.progress-track{height:4px;background:rgba(196,132,154,0.2);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--rose),var(--rose-gold));border-radius:2px;transition:width 0.4s cubic-bezier(.4,0,.2,1)}
+.progress-labels{display:flex;justify-content:space-between;margin-top:8px}
+.progress-labels span{font-size:0.68rem;color:var(--text-light);letter-spacing:0.06em}
+
+/* Step form glass container */
+.step-form{
+  width:100%;max-width:580px;position:relative;min-height:auto;box-sizing:border-box;
+  background:rgba(255,255,255,0.18)!important;
+  backdrop-filter:blur(40px) saturate(260%) brightness(1.06)!important;
+  -webkit-backdrop-filter:blur(40px) saturate(260%) brightness(1.06)!important;
+  border:1px solid rgba(255,255,255,0.45)!important;
+  box-shadow:0 20px 60px rgba(196,132,154,0.18),inset 0 1.5px 0 rgba(255,255,255,0.82)!important;
+  border-radius:28px;padding:40px 36px!important;overflow:visible;
+}
+.step-form::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:45%;
+  background:linear-gradient(180deg,rgba(255,255,255,0.38) 0%,transparent 100%);
+  pointer-events:none;z-index:0;
+}
+.step-form>*{position:relative;z-index:1}
+
+.step{display:none;width:100%;box-sizing:border-box;animation:stepIn 0.45s cubic-bezier(.4,0,.2,1) both}
+.step.active{display:block}
+@keyframes stepIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+.step-num{font-size:0.73rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--rose);margin-bottom:10px}
+.step-question{font-family:var(--serif);font-size:1.8rem;font-weight:400;color:var(--text-dark);margin-bottom:8px;line-height:1.3;word-wrap:break-word}
+.step-hint{font-size:0.85rem;color:var(--text-light);margin-bottom:28px;line-height:1.7}
+.step-options{display:flex;flex-direction:column;gap:12px;width:100%}
+
+/* Step option buttons — iOS glass pill style */
+.step-option{
+  display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:14px;font-size:0.93rem;color:var(--text-mid);font-weight:500;
+  background:rgba(255,255,255,0.22)!important;
+  backdrop-filter:blur(28px) saturate(220%)!important;
+  -webkit-backdrop-filter:blur(28px) saturate(220%)!important;
+  border:1px solid rgba(255,255,255,0.5)!important;
+  box-shadow:0 4px 16px rgba(196,132,154,0.1),inset 0 1px 0 rgba(255,255,255,0.7)!important;
+  transition:all 0.25s cubic-bezier(.4,0,.2,1)!important;
+  position:relative;overflow:hidden;cursor:pointer;width:100%;box-sizing:border-box;
+}
+.step-option::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:50%;
+  background:linear-gradient(180deg,rgba(255,255,255,0.35) 0%,transparent 100%);
+  pointer-events:none;z-index:0;border-radius:inherit;
+}
+.step-option>*{position:relative;z-index:1}
+.step-option:hover{
+  background:rgba(255,255,255,0.38)!important;
+  border-color:rgba(196,132,154,0.4)!important;
+  box-shadow:0 8px 28px rgba(196,132,154,0.18),inset 0 1px 0 rgba(255,255,255,0.9)!important;
+  transform:translateX(6px) scale(1.01)!important;
+}
+.step-option.selected{
+  background:rgba(196,132,154,0.22)!important;
+  border-color:rgba(196,132,154,0.55)!important;
+  box-shadow:0 8px 28px rgba(196,132,154,0.2),inset 0 1px 0 rgba(255,255,255,0.7)!important;
+  color:var(--rose-dark);
+}
+.step-option .opt-icon{font-size:1.3rem;flex-shrink:0;width:36px;text-align:center}
+.step-option-check{margin-left:auto;width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(196,132,154,0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.25s}
+.step-option.selected .step-option-check{background:var(--rose-dark);border-color:var(--rose-dark);color:white}
+.step-option.selected .step-option-check::after{content:'✓';font-size:0.7rem;font-weight:700}
+
+/* Input fields — glass style */
+.step-input-field{
+  width:100%;padding:16px 18px;border-radius:14px;font-family:var(--sans);font-size:1rem;color:var(--text-dark);outline:none;transition:all 0.3s;margin-bottom:14px;box-sizing:border-box;
+  background:rgba(255,255,255,0.28)!important;
+  backdrop-filter:blur(20px) saturate(180%)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(180%)!important;
+  border:1px solid rgba(255,255,255,0.55)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.7),0 4px 12px rgba(196,132,154,0.08)!important;
+}
+.step-input-field:focus{
+  background:rgba(255,255,255,0.48)!important;
+  border-color:rgba(196,132,154,0.45)!important;
+  box-shadow:0 0 0 3px rgba(196,132,154,0.15),inset 0 1px 0 rgba(255,255,255,0.9)!important;
+}
+
+.step-nav{display:flex;align-items:center;justify-content:space-between;margin-top:30px;width:100%}
+/* Back button — glass */
+.step-back{
+  border-radius:30px;font-family:var(--sans);font-size:0.88rem;font-weight:500;cursor:pointer;transition:all 0.3s;padding:12px 24px;
+  background:rgba(255,255,255,0.2)!important;
+  backdrop-filter:blur(20px)!important;
+  border:1px solid rgba(255,255,255,0.45)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)!important;
+  color:var(--text-mid);
+}
+.step-back:hover{
+  background:rgba(255,255,255,0.38)!important;
+  border-color:rgba(196,132,154,0.35)!important;
+  color:var(--rose-dark);
+}
+.step-next{background:var(--rose);color:white;border:none;padding:13px 32px;border-radius:30px;font-family:var(--sans);font-size:0.9rem;font-weight:500;cursor:pointer;transition:all 0.3s;box-shadow:0 6px 20px rgba(196,132,154,0.4);display:flex;align-items:center;gap:8px}
+.step-next:hover{background:var(--rose-dark);transform:translateY(-2px);box-shadow:0 10px 28px rgba(196,132,154,0.5)}
+.step-next:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none}
+.multi-select-info{font-size:0.78rem;color:var(--rose);margin-bottom:14px;font-weight:500}
+
+/* Success card */
+.hiring-success{
+  text-align:center;padding:48px 36px!important;display:none;width:100%;max-width:580px;box-sizing:border-box;
+  background:rgba(255,255,255,0.2)!important;
+  backdrop-filter:blur(40px) saturate(250%)!important;
+  -webkit-backdrop-filter:blur(40px) saturate(250%)!important;
+  border:1px solid rgba(255,255,255,0.48)!important;
+  box-shadow:0 20px 60px rgba(196,132,154,0.18),inset 0 1.5px 0 rgba(255,255,255,0.8)!important;
+  border-radius:28px;position:relative;overflow:hidden;
+}
+.hiring-success::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:45%;
+  background:linear-gradient(180deg,rgba(255,255,255,0.38) 0%,transparent 100%);
+  pointer-events:none;z-index:0;
+}
+.hiring-success>*{position:relative;z-index:1}
+.hiring-success-icon{font-size:4rem;margin-bottom:20px;display:block;animation:pulse 1s ease infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.hiring-success h3{font-family:var(--serif);font-size:2rem;color:var(--rose-dark);margin-bottom:12px}
+.hiring-success p{color:var(--text-mid);line-height:1.8;max-width:420px;margin:0 auto 28px}
+
+/* ── COVERAGE ── */
+#coverage{background:#fff7f9}
+
+/* ════════════════════════════════════════
+   TRUE iOS LIQUID GLASS SYSTEM
+════════════════════════════════════════ */
+.lg,.liquid-glass,.glass-float,.why-card.lg-why{
+  position:relative;
+  background:rgba(255,255,255,0.14)!important;
+  backdrop-filter:blur(40px) saturate(280%) brightness(1.08) contrast(1.04)!important;
+  -webkit-backdrop-filter:blur(40px) saturate(280%) brightness(1.08) contrast(1.04)!important;
+  border:1px solid rgba(255,255,255,0.38)!important;
+  box-shadow:
+    0 20px 60px rgba(196,132,154,0.18),
+    0 6px 20px rgba(155,92,115,0.1),
+    inset 0 1.5px 0 rgba(255,255,255,0.75),
+    inset 0 -1px 0 rgba(196,132,154,0.12),
+    inset 1px 0 0 rgba(255,255,255,0.25),
+    inset -1px 0 0 rgba(255,255,255,0.25)!important;
+  overflow:hidden;
+}
+.lg::before,.liquid-glass::before,.glass-float::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:48%;
+  background:linear-gradient(180deg,rgba(255,255,255,0.36) 0%,rgba(255,255,255,0.10) 60%,transparent 100%);
+  border-radius:inherit;pointer-events:none;z-index:0;
+}
+.lg>*,.liquid-glass>*, .glass-float>*{position:relative;z-index:1}
+
+.liquid-glass-dark{
+  position:relative;
+  background:rgba(30,10,20,0.28)!important;
+  backdrop-filter:blur(40px) saturate(220%) brightness(0.92)!important;
+  -webkit-backdrop-filter:blur(40px) saturate(220%) brightness(0.92)!important;
+  border:1px solid rgba(255,255,255,0.14)!important;
+  box-shadow:0 16px 48px rgba(0,0,0,0.35),inset 0 1.5px 0 rgba(255,255,255,0.18),inset 0 -1px 0 rgba(0,0,0,0.2)!important;
+  overflow:hidden;
+}
+.liquid-glass-dark::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:45%;
+  background:linear-gradient(180deg,rgba(255,255,255,0.1) 0%,transparent 100%);
+  pointer-events:none;z-index:0;
+}
+.liquid-glass-dark>*{position:relative;z-index:1}
+
+/* ── SERVICE CARDS — iOS Glass Float ── */
+#services{background:linear-gradient(135deg,#f8e8ef 0%,#f3d8e5 40%,#eacedf 100%)!important}
+.service-card.glass-float{
+  background:rgba(255,255,255,0.18)!important;
+  backdrop-filter:blur(36px) saturate(260%) brightness(1.06)!important;
+  -webkit-backdrop-filter:blur(36px) saturate(260%) brightness(1.06)!important;
+  border:1px solid rgba(255,255,255,0.45)!important;
+  box-shadow:
+    0 18px 56px rgba(196,132,154,0.16),
+    0 4px 16px rgba(155,92,115,0.08),
+    inset 0 1.5px 0 rgba(255,255,255,0.8),
+    inset 0 -1px 0 rgba(196,132,154,0.1),
+    inset 1px 0 0 rgba(255,255,255,0.3),
+    inset -1px 0 0 rgba(255,255,255,0.3)!important;
+  animation:iosFloat 6s cubic-bezier(.45,.05,.55,.95) infinite;
+  transition:box-shadow 0.4s,transform 0.4s!important;
+}
+.service-card.glass-float::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:50%;
+  background:linear-gradient(180deg,rgba(255,255,255,0.42) 0%,rgba(255,255,255,0.08) 65%,transparent 100%);
+  pointer-events:none;z-index:0;border-radius:inherit;
+}
+.service-card.glass-float>*{position:relative;z-index:1}
+.service-card.glass-float:nth-child(1){animation-delay:0s}
+.service-card.glass-float:nth-child(2){animation-delay:0.8s}
+.service-card.glass-float:nth-child(3){animation-delay:1.6s}
+.service-card.glass-float:hover{
+  animation:none!important;
+  transform:translateY(-14px) scale(1.03)!important;
+  box-shadow:
+    0 36px 80px rgba(196,132,154,0.28),
+    0 10px 32px rgba(155,92,115,0.14),
+    inset 0 1.5px 0 rgba(255,255,255,0.9),
+    inset 0 -1px 0 rgba(196,132,154,0.14)!important;
+}
+
+/* ── WHY CARDS — iOS Glass Float ── */
+#why{background:linear-gradient(135deg,#f2d4e0 0%,#f8e8f0 50%,#fdf4f8 100%)!important}
+.why-card{
+  background:rgba(255,255,255,0.18)!important;
+  backdrop-filter:blur(36px) saturate(260%) brightness(1.06)!important;
+  -webkit-backdrop-filter:blur(36px) saturate(260%) brightness(1.06)!important;
+  border:1px solid rgba(255,255,255,0.48)!important;
+  box-shadow:
+    0 14px 48px rgba(196,132,154,0.14),
+    0 4px 14px rgba(155,92,115,0.07),
+    inset 0 1.5px 0 rgba(255,255,255,0.82),
+    inset 0 -1px 0 rgba(196,132,154,0.09)!important;
+  animation:iosFloat 6s cubic-bezier(.45,.05,.55,.95) infinite;
+  position:relative;overflow:hidden;
+}
+.why-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:50%;
+  background:linear-gradient(180deg,rgba(255,255,255,0.45) 0%,rgba(255,255,255,0.08) 65%,transparent 100%);
+  pointer-events:none;z-index:0;border-radius:inherit;
+}
+.why-card>*{position:relative;z-index:1}
+.why-card:nth-child(1){animation-delay:0s}
+.why-card:nth-child(2){animation-delay:0.9s}
+.why-card:nth-child(3){animation-delay:1.8s}
+.why-card:nth-child(4){animation-delay:2.7s}
+.why-card:hover{
+  animation:none!important;
+  transform:translateY(-12px) scale(1.05)!important;
+  box-shadow:
+    0 30px 72px rgba(196,132,154,0.24),
+    inset 0 1.5px 0 rgba(255,255,255,0.92),
+    inset 0 -1px 0 rgba(196,132,154,0.12)!important;
+}
+
+@keyframes iosFloat{
+  0%,100%{transform:translateY(0px)}
+  30%{transform:translateY(-7px)}
+  60%{transform:translateY(-3px)}
+  80%{transform:translateY(-9px)}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:17px 26px}nav.scrolled{padding:12px 26px}
+  .nav-links{display:none}.hamburger{display:flex}
+  .hero{padding:110px 26px 58px;flex-direction:column}
+  .hero-card{display:none}
+  .hero-stats{gap:22px}
+  section{padding:64px 26px}
+  #about{grid-template-columns:1fr;gap:36px}
+  .about-visual{order:-1}.about-img-box{height:360px}
+  .owner-card{right:8px;bottom:-14px}
+  footer{flex-direction:column;align-items:flex-start;padding:36px 26px}
+  .footer-copy{text-align:left}
+  .review-form-wrap{padding:28px 22px}
+  .form-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .hiring-header{min-height:auto!important;overflow:visible!important;padding:28px 22px!important}
+  .step-form{min-height:auto!important;padding:28px 20px!important;overflow:visible!important}
+  .step-question{font-size:1.5rem!important}
+  .step-nav{position:relative;padding-top:15px;z-index:5}
+  #hiringPage{padding-bottom:60px!important;overflow-y:auto!important}
+  .step-option{padding:14px 16px!important}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2.5rem}
+  .hero-actions{flex-direction:column}
+  .btn-primary,.btn-outline{text-align:center;justify-content:center}
+  .hero-stats{flex-wrap:wrap;gap:18px}
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class='scroll-progress' id='scrollProgress'></div>
+
+<!-- ══ HIRING PAGE OVERLAY ══ -->
+<div id="hiringPage">
+  <button class="hiring-close" onclick="closeHiring()" aria-label="Close">✕</button>
+  <div class="hiring-header fade-in">
+    <span class="section-label">Join Our Team</span>
+    <h2>We Are <em style="font-style:italic;color:var(--rose)">Hiring</em></h2>
+    <p>We are looking for passionate, skilled, and caring women to join the Beauty Essence family. If beauty is your calling, we would love to hear from you.</p>
+    <div style="margin-top:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(196,132,154,0.12);border:1px solid rgba(196,132,154,0.3);border-radius:30px;padding:7px 18px;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose-dark)">👩 Women Only Applications</div>
+  </div>
+
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-labels"><span>Your Details</span><span>Experience</span><span>Availability</span></div>
+  </div>
+
+  <div class="step-form" id="stepForm">
+
+    <!-- STEP 1: Name -->
+    <div class="step active" id="step1">
+      <p class="step-num">Step 1 of 8</p>
+      <h3 class="step-question">What is your full name?</h3>
+      <p class="step-hint">Please enter your name as you'd like us to address you.</p>
+      <input class="step-input-field" id="inp_name" type="text" placeholder="e.g. Priya Sharma" oninput="checkTextInput('inp_name','btn_s1')"/>
+      <div class="step-nav">
+        <span></span>
+        <button class="step-next" id="btn_s1" onclick="goStep(2)" disabled>Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Mobile -->
+    <div class="step" id="step2">
+      <p class="step-num">Step 2 of 8</p>
+      <h3 class="step-question">Your mobile number?</h3>
+      <p class="step-hint">We'll reach out to you via WhatsApp for the next steps.</p>
+      <input class="step-input-field" id="inp_phone" type="tel" placeholder="e.g. 98765 43210" oninput="checkTextInput('inp_phone','btn_s2')"/>
+      <div class="step-nav">
+        <button class="step-back" onclick="goStep(1)">← Back</button>
+        <button class="step-next" id="btn_s2" onclick="goStep(3)" disabled>Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Age -->
+    <div class="step" id="step3">
+      <p class="step-num">Step 3 of 8</p>
+      <h3 class="step-question">How old are you?</h3>
+      <p class="step-hint">We welcome applicants from all working-age groups.</p>
+      <div class="step-options" id="opts_age">
+        <div class="step-option" onclick="selectOption(this,'age','18–22','opts_age','btn_s3')"><span class="opt-icon">🌱</span>18 – 22 years<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'age','23–28','opts_age','btn_s3')"><span class="opt-icon">🌸</span>23 – 28 years<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'age','29–35','opts_age','btn_s3')"><span class="opt-icon">🌺</span>29 – 35 years<span class="step-option-check"></span></div>
+      </div>
+      <div class="step-nav">
+        <button class="step-back" onclick="goStep(2)">← Back</button>
+        <button class="step-next" id="btn_s3" onclick="goStep(4)" disabled>Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Location -->
+    <div class="step" id="step4">
+      <p class="step-num">Step 4 of 8</p>
+      <h3 class="step-question">Which area are you based in?</h3>
+      <p class="step-hint">We currently serve West Hyderabad. Preference given to candidates nearby.</p>
+      <input class="step-input-field" id="inp_area" type="text" placeholder="e.g. Miyapur, Kukatpally, Gachibowli…" oninput="checkTextInput('inp_area','btn_s4')"/>
+      <div class="step-nav">
+        <button class="step-back" onclick="goStep(3)">← Back</button>
+        <button class="step-next" id="btn_s4" onclick="goStep(5)" disabled>Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: Experience -->
+    <div class="step" id="step5">
+      <p class="step-num">Step 5 of 8</p>
+      <h3 class="step-question">How much beauty experience do you have?</h3>
+      <p class="step-hint">Be honest — we welcome both newcomers and experienced professionals.</p>
+      <div class="step-options" id="opts_exp">
+        <div class="step-option" onclick="selectOption(this,'exp','No experience (Fresher)','opts_exp','btn_s5')"><span class="opt-icon">🌟</span>No experience — I'm a fresher<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'exp','Less than 1 year','opts_exp','btn_s5')"><span class="opt-icon">✨</span>Less than 1 year<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'exp','1–3 years','opts_exp','btn_s5')"><span class="opt-icon">💅</span>1 – 3 years<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'exp','3–5 years','opts_exp','btn_s5')"><span class="opt-icon">💄</span>3 – 5 years<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'exp','5+ years','opts_exp','btn_s5')"><span class="opt-icon">🏆</span>5+ years — Senior level<span class="step-option-check"></span></div>
+      </div>
+      <div class="step-nav">
+        <button class="step-back" onclick="goStep(4)">← Back</button>
+        <button class="step-next" id="btn_s5" onclick="goStep(6)" disabled>Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 6: Services (multi-select) -->
+    <div class="step" id="step6">
+      <p class="step-num">Step 6 of 8</p>
+      <h3 class="step-question">Which services can you offer?</h3>
+      <p class="step-hint multi-select-info">✦ Select all that apply</p>
+      <div class="step-options" id="opts_services">
+        <div class="step-option multi" onclick="toggleMulti(this,'Hair Services','btn_s6')"><span class="opt-icon">💇‍♀️</span>Hair Services (braiding, styling, treatments)<span class="step-option-check"></span></div>
+        <div class="step-option multi" onclick="toggleMulti(this,'Skincare & Facials','btn_s6')"><span class="opt-icon">✨</span>Skincare &amp; Facials<span class="step-option-check"></span></div>
+        <div class="step-option multi" onclick="toggleMulti(this,'Makeup & Beauty','btn_s6')"><span class="opt-icon">💄</span>Makeup &amp; Beauty Artistry<span class="step-option-check"></span></div>
+      </div>
+      <div class="step-nav">
+        <button class="step-back" onclick="goStep(5)">← Back</button>
+        <button class="step-next" id="btn_s6" onclick="goStep(7)" disabled>Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 7: Availability -->
+    <div class="step" id="step7">
+      <p class="step-num">Step 7 of 8</p>
+      <h3 class="step-question">What is your availability?</h3>
+      <p class="step-hint">Let us know how you'd prefer to work.</p>
+      <div class="step-options" id="opts_avail">
+        <div class="step-option" onclick="selectOption(this,'avail','Full-time','opts_avail','btn_s7')"><span class="opt-icon">⏰</span>Full-time (Mon–Sat)<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'avail','Part-time (Mornings)','opts_avail','btn_s7')"><span class="opt-icon">🌅</span>Part-time — Mornings only<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'avail','Part-time (Evenings)','opts_avail','btn_s7')"><span class="opt-icon">🌙</span>Part-time — Evenings only<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'avail','Weekends only','opts_avail','btn_s7')"><span class="opt-icon">📅</span>Weekends only<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'avail','Flexible','opts_avail','btn_s7')"><span class="opt-icon">🤸‍♀️</span>Flexible — Any time works for me<span class="step-option-check"></span></div>
+      </div>
+      <div class="step-nav">
+        <button class="step-back" onclick="goStep(6)">← Back</button>
+        <button class="step-next" id="btn_s7" onclick="goStep(8)" disabled>Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 8: Certification -->
+    <div class="step" id="step8">
+      <p class="step-num">Step 8 of 8</p>
+      <h3 class="step-question">Do you hold any beauty certifications or training?</h3>
+      <p class="step-hint">Certificates are a plus, but not mandatory. What matters most is your passion and dedication.</p>
+      <div class="step-options" id="opts_cert">
+        <div class="step-option" onclick="selectOption(this,'cert','Yes – certified/trained','opts_cert','btn_s8')"><span class="opt-icon">🎓</span>Yes — I have a certificate or formal training<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'cert','Self-taught','opts_cert','btn_s8')"><span class="opt-icon">💡</span>Self-taught with solid skills<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'cert','Currently training','opts_cert','btn_s8')"><span class="opt-icon">📚</span>Currently enrolled in training<span class="step-option-check"></span></div>
+        <div class="step-option" onclick="selectOption(this,'cert','No formal training yet','opts_cert','btn_s8')"><span class="opt-icon">🌱</span>No formal training yet — willing to learn<span class="step-option-check"></span></div>
+      </div>
+      <div class="step-nav">
+        <button class="step-back" onclick="goStep(7)">← Back</button>
+        <button class="step-next" id="btn_s8" onclick="submitHiring()" disabled>Send Application 💬</button>
+      </div>
+    </div>
+
+  </div><!-- /step-form -->
+
+  <div class="hiring-success" id="hiringSuccess">
+    <span class="hiring-success-icon">🌸</span>
+    <h3>Your application is ready!</h3>
+    <p>We're redirecting you to WhatsApp to send your details to Mohana. She personally reviews every application and will get back to you shortly.</p>
+    <button class="step-next" onclick="sendToWhatsApp()" style="margin:0 auto;font-size:1rem;padding:16px 36px">Open WhatsApp →</button>
+  </div>
+</div><!-- /hiringPage -->
+
+<!-- ══ NAV ══ -->
+<nav id="mainNav">
+  <a class="nav-logo" href="#"><span>Beauty</span> Essence</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#leave-review">Leave a Review</a></li>
+    <li><a href="#" class="nav-hiring" onclick="openHiring(event)">We're Hiring 💼</a></li>
+    <li><a href="https://wa.me/918096658578?text=Hello%20Beauty%20Essence!%20I%27d%20like%20to%20book%20a%20session." target="_blank" class="nav-cta">Book Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="#leave-review" onclick="closeMobile()">Leave a Review</a>
+  <a href="#" class="m-hiring" onclick="closeMobile();openHiring(event)">💼 We're Hiring</a>
+  <a href="https://wa.me/918096658578?text=Hello%20Beauty%20Essence!%20I%27d%20like%20to%20book%20a%20session." target="_blank" class="m-book" onclick="closeMobile()">📲 Book on WhatsApp</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">✦ Home Beauty Services</div>
+    <h1>Where Beauty <em>Blossoms</em><br>at Your Doorstep</h1>
+    <p class="hero-tagline">Beauty treatments delivered with grace, expertise, and care — in the comfort of your own home.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/918096658578?text=Hello%20Beauty%20Essence!%20I%27d%20like%20to%20book%20a%20session." target="_blank" class="btn-primary">📲 Book Now</a>
+      <a href="#services" class="btn-outline">Explore Services ↓</a>
+    </div>
+    <div class="hero-actions" style="margin-top: 30px; gap: 40px;">
+      <div class="stat-item"><span class="stat-num counter" data-target="50">0</span><span class="stat-label">Trusted Clients</span></div>
+      <div class="stat-item"><span class="stat-num counter" data-target="3">0</span><span class="stat-label">Specialties</span></div>
+      <div class="stat-item"><span class="stat-num counter" data-target="100">0%</span><span class="stat-label">Home-Based</span></div>
+    </div>
+  </div>
+  <div class="hero-card liquid-glass parallax">
+    <p class="hero-card-title">Our Signature Services</p>
+    <div>
+      <span class="service-pill">💇‍♀️ Hair</span>
+      <span class="service-pill">✨ Skincare</span>
+      <span class="service-pill">💄 Makeup</span>
+    </div>
+    <div class="hero-card-hours">
+      <p class="hours-label">Availability</p>
+      <p class="hours-val">Mon – Sat &nbsp;|&nbsp; 8am – 7pm</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="text-center fade-in">
+    <span class="section-label">What We Offer</span>
+    <h2 class="section-title">Our Curated Services</h2>
+    <p class="section-sub">Each service is tailored to celebrate your unique beauty, delivered with care and expertise.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card glass-float fade-in service-click">
+      <div class="service-icon">💇‍♀️</div>
+      <h3 class="service-name">Hair Services</h3>
+      <p class="service-desc">From intricate braiding to silky relaxers and elegant styling — every strand treated with care.</p>
+      <ul class="service-list"><li>Braiding</li><li>Relaxing</li><li>Blow-dry & Style</li><li>Hair Treatment</li></ul>
+    </div>
+    <div class="service-card glass-float fade-in service-click">
+      <div class="service-icon">✨</div>
+      <h3 class="service-name">Skincare & Facials</h3>
+      <p class="service-desc">Nourish and restore your skin with rejuvenating facial treatments for a radiant glow.</p>
+      <ul class="service-list"><li>Deep Cleanse</li><li>Brightening Facial</li><li>Exfoliation</li><li>Moisturising</li></ul>
+    </div>
+    <div class="service-card glass-float fade-in service-click">
+      <div class="service-icon">💄</div>
+      <h3 class="service-name">Makeup & Beauty</h3>
+      <p class="service-desc">Flawless, long-lasting makeup artistry — from everyday elegance to special event glamour.</p>
+      <ul class="service-list"><li>Full Glam</li><li>Natural Look</li><li>Event Makeup</li><li>Brow Shaping</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="about-visual fade-left">
+    <div class="about-img-box" style="background: linear-gradient(135deg, #2e1a22 0%, #563343 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.15); text-align: center; padding: 40px;">
+      <div style="font-size: 3.5rem; font-family: var(--serif); color: var(--blush); font-style: italic; margin-bottom: 5px; letter-spacing: 0.05em;">Beauty Essence</div>
+      <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--rose); font-weight: 500;">Premium Mobile Atelier</div>
+      <div style="width: 40px; height: 1px; background: rgba(247,224,230,0.3); margin: 24px auto;"></div>
+      <div style="font-size: 0.82rem; color: rgba(255,255,255,0.7); max-width: 220px; font-weight: 300; line-height: 1.6; font-style: italic;">"Bringing elegance, precision, and sanctuary treatments directly into the serene environment of your residence."</div>
+      
+      <div class="exp-badge liquid-glass">
+        <span class="exp-num">7</span>
+        <span class="exp-txt">Years of<br>Experience</span>
+      </div>
+    </div>
+    <div class="owner-card liquid-glass">
+      <p class="owner-name">Mohana Kalyani</p>
+      <p class="owner-title">Founder & Lead Beauty Specialist</p>
+      <p class="owner-stars">★★★★★</p>
+    </div>
+  </div>
+  <div class="about-content fade-right">
+    <span class="section-label">About Mohana</span>
+    <h2 class="section-title">More Than Just a<br><em style="font-style:italic;color:var(--rose)">Beauty Service</em></h2>
+    <p class="section-sub">Hi, I'm <strong>Mohana Kalyani</strong> — founder of Beauty Essence, with over <strong>10 years of experience</strong>. I bring salon-quality care right to your doorstep.</p>
+    <ul class="about-features">
+      <li>Organic & low-chemical products — gentle on your skin</li>
+      <li>Only trusted, reputable brands — never untested products</li>
+      <li>Hygienic tools & sanitised equipment every visit</li>
+      <li>Flexible scheduling to fit your lifestyle</li>
+    </ul>
+    <div style="margin-top:32px">
+      <a href="https://wa.me/918096658578?text=Hello%20Mohana%20Kalyani!%20I%27d%20like%20to%20book%20a%20session%20with%20Beauty%20Essence." target="_blank" class="btn-primary">Book Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY ══ -->
+<section id="why">
+  <div class="text-center fade-in">
+    <span class="section-label">Why Choose Us</span>
+    <h2 class="section-title">The Beauty Essence Difference</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-scale liquid-glass"><span class="why-icon">🏡</span><h3 class="why-title">Home Comfort</h3><p class="why-text">Enjoy premium beauty care in the privacy and comfort of your own space.</p></div>
+    <div class="why-card fade-scale liquid-glass"><span class="why-icon">🌿</span><h3 class="why-title">Organic & Gentle</h3><p class="why-text">We use organic, low-chemical formulations and only trusted, skin-loving products — always.</p></div>
+    <div class="why-card fade-scale liquid-glass"><span class="why-icon">⏰</span><h3 class="why-title">Flexible Hours</h3><p class="why-text">Monday to Saturday, early mornings to evenings — we work around your schedule.</p></div>
+    <div class="why-card fade-scale liquid-glass"><span class="why-icon">🤝</span><h3 class="why-title">Personalised</h3><p class="why-text">No two clients are the same — every session is uniquely crafted for you.</p></div>
+  </div>
+</section>
+
+<section id="coverage" style="background:#fff7f9">
+<div class="text-center fade-in">
+<span class="section-label">Service Area</span>
+<h2 class="section-title">Serving Hyderabad West & Nearby Areas</h2>
+<p class="section-sub">Based in Kollur. Appointments available in Kollur, Tellapur, Lingampally, Chandanagar, Miyapur, KPHB, Kukatpally, Moosapet, Hitech City, Gachibowli, Nallagandla and nearby areas.</p>
+</div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testimonials">
+  <div class="text-center fade-in">
+    <span class="section-label">Client Love</span>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-sub">Real experiences from real people who trust Beauty Essence for their beauty care.</p>
+  </div>
+  <div class="testimonials-grid" id="reviewsContainer"></div>
+</section>
+
+<!-- ══ BOOK / WHATSAPP ══ -->
+<section id="book">
+  <div class="book-content fade-in">
+    <span class="section-label">Book a Session</span>
+    <h2 class="section-title">Ready to Feel Your Best?</h2>
+    <p class="section-sub">Send us a message on WhatsApp and we'll schedule your appointment — quick, easy, and convenient.</p>
+    <div class="divider-line"></div>
+    <div>
+      <a href="https://wa.me/918096658578?text=Hello%20Beauty%20Essence!%20I%27d%20like%20to%20book%20a%20session%20with%20Mohana%20Kalyani." target="_blank" class="whatsapp-btn">💬 Chat on WhatsApp — +91 80966 58578</a>
+    </div>
+    <p class="book-note">📍 Home-based · Mon–Sat · 8:00 AM – 7:00 PM</p>
+    <div class="review-prompt liquid-glass-dark">
+      <p>✨ Had a session with us? We'd love to hear your experience!</p>
+      <a href="#leave-review" class="btn-review">⭐ Leave a Review</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEW FORM ══ -->
+<section id="leave-review">
+  <div class="text-center fade-in">
+    <span class="section-label">Share Your Experience</span>
+    <h2 class="section-title">Leave a Review</h2>
+    <p class="section-sub">Loved your session? Help others discover Beauty Essence by sharing your experience below.</p>
+  </div>
+  <div class="review-form-wrap fade-in">
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label" for="reviewName">Your Name</label>
+        <input class="form-input" id="reviewName" type="text" placeholder="e.g. Priya Sharma"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="reviewService">Service Used</label>
+        <select class="form-input" id="reviewService">
+          <option value="">Select a service…</option>
+          <option>Hair Services</option>
+          <option>Skincare & Facials</option>
+          <option>Makeup & Beauty</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Your Rating</label>
+      <div class="stars-row" id="starRow">
+        <button class="star-btn" onclick="selectStar(1)" title="1 star">★</button>
+        <button class="star-btn" onclick="selectStar(2)" title="2 stars">★</button>
+        <button class="star-btn" onclick="selectStar(3)" title="3 stars">★</button>
+        <button class="star-btn" onclick="selectStar(4)" title="4 stars">★</button>
+        <button class="star-btn" onclick="selectStar(5)" title="5 stars">★</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="reviewComment">Your Experience</label>
+      <textarea class="form-input" id="reviewComment" placeholder="Tell us about your session — what did you love most?"></textarea>
+    </div>
+    <button class="btn-submit" onclick="submitReview()">✦ Submit My Review</button>
+    <div class="success-msg" id="successMsg">🌸 Thank you! Your review has been posted successfully!</div>
+    <div class="error-msg" id="errorMsg">Please fill in all fields and select a star rating.</div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div>
+    <div class="footer-logo"><span>Beauty</span> Essence</div>
+    <p class="footer-tagline">Where Beauty Blossoms at Your Doorstep</p>
+    <p class="footer-founder">By Mohana Kalyani</p>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#book">Book Now</a></li>
+    <li><a href="#" onclick="openHiring(event)">We're Hiring</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Beauty Essence.<br>All rights reserved.</p>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════
+   REVIEW SYSTEM
+══════════════════════════════════════════ */
+const STORE_KEY='be_reviews_v1';
+const SEED=[];
+
+function getReviews(){
+  try{const s=localStorage.getItem(STORE_KEY);if(!s){localStorage.setItem(STORE_KEY,JSON.stringify(SEED));return SEED}return JSON.parse(s);}catch{return SEED}
+}
+function saveReviews(arr){try{localStorage.setItem(STORE_KEY,JSON.stringify(arr))}catch{}}
+function getInitial(name){return(name||'?').charAt(0).toUpperCase()}
+function getMonthYear(){const d=new Date();return d.toLocaleDateString('en-GB',{month:'long',year:'numeric'})}
+function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function hashColor(name){const colors=['#C4849A','#9B5C73','#C8977A','#8B6B6B','#A07585','#D4A5A5'];let h=0;for(let i=0;i<name.length;i++)h=(h*31+name.charCodeAt(i))%colors.length;return colors[Math.abs(h)%colors.length]}
+
+function renderReviews(){
+  const container=document.getElementById('reviewsContainer');
+  const reviews=getReviews();
+  if(!reviews.length){container.innerHTML='<div class="no-reviews">Be the first to leave a review! 🌸</div>';return;}
+  container.innerHTML=reviews.map(r=>`
+    <div class="testimonial-card fade-in visible">
+      <span class="quote-mark">"</span>
+      <p class="testimonial-text">${escHtml(r.comment)}</p>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:${hashColor(r.name)}">${getInitial(r.name)}</div>
+        <div><p class="author-name">${escHtml(r.name)}</p><p class="author-service">${escHtml(r.service)}</p><p class="author-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</p></div>
+      </div>
+    </div>`).join('');
+}
+
+let selectedStar=0;
+function selectStar(n){selectedStar=n;document.querySelectorAll('.star-btn').forEach((b,i)=>b.classList.toggle('lit',i<n));}
+
+function submitReview(){
+  const name=document.getElementById('reviewName').value.trim();
+  const service=document.getElementById('reviewService').value;
+  const comment=document.getElementById('reviewComment').value.trim();
+  const success=document.getElementById('successMsg');
+  const error=document.getElementById('errorMsg');
+  error.style.display='none';success.style.display='none';
+  if(!name||!service||!comment||!selectedStar){error.style.display='block';setTimeout(()=>error.style.display='none',3500);return;}
+  const reviews=getReviews();
+  reviews.unshift({id:Date.now(),name,rating:selectedStar,service,comment,date:getMonthYear()});
+  saveReviews(reviews);
+  renderReviews();
+  document.getElementById('reviewName').value='';
+  document.getElementById('reviewService').value='';
+  document.getElementById('reviewComment').value='';
+  selectedStar=0;
+  document.querySelectorAll('.star-btn').forEach(b=>b.classList.remove('lit'));
+  success.style.display='block';
+  setTimeout(()=>success.style.display='none',4000);
+  setTimeout(()=>document.getElementById('testimonials').scrollIntoView({behavior:'smooth'}),600);
+}
+
+/* ══════════════════════════════════════════
+   NAV & MENU
+══════════════════════════════════════════ */
+const mainNav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>mainNav.classList.toggle('scrolled',scrollY>40));
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open')}
+document.addEventListener('click',e=>{
+  const menu=document.getElementById('mobileMenu');
+  if(!menu.contains(e.target)&&!e.target.closest('.hamburger'))closeMobile();
+});
+
+/* ══════════════════════════════════════════
+   SCROLL ANIMATIONS
+══════════════════════════════════════════ */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((entry,i)=>{
+    if(entry.isIntersecting){
+      setTimeout(()=>entry.target.classList.add('visible'),i*80);
+      obs.unobserve(entry.target);
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.fade-in,.fade-left,.fade-right,.fade-scale').forEach(el=>obs.observe(el));
+
+/* ── SCROLL PROGRESS ── */
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  const p=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100;
+  const el=document.getElementById('scrollProgress');
+  if(el) el.style.width=p+'%';
+});
+
+/* ── PARALLAX ── */
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.parallax').forEach(el=>{
+    el.style.setProperty('--parallax',(window.scrollY*0.07)+'px');
+  });
+});
+
+/* ── ANIMATED COUNTERS ── */
+const counterObs=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const el=entry.target;const target=+el.dataset.target;let n=0;
+      const step=Math.max(1,Math.ceil(target/60));
+      const t=setInterval(()=>{n+=step;if(n>=target){n=target;clearInterval(t);}el.textContent=n+(target===100?'%':'+');},20);
+      counterObs.unobserve(el);
+    }
+  });
+});
+document.querySelectorAll('.counter').forEach(c=>counterObs.observe(c));
+
+/* ── CURSOR GLOW ── */
+document.addEventListener('mousemove',e=>{
+  const g=document.getElementById('cursorGlow');
+  if(g){g.style.left=(e.clientX-130)+'px';g.style.top=(e.clientY-130)+'px';}
+});
+
+/* ── SERVICE CLICK → WHATSAPP ── */
+const services=['Hair Services','Skincare & Facials','Makeup & Beauty'];
+document.querySelectorAll('.service-click').forEach((card,i)=>{
+  card.style.cursor='pointer';
+  card.addEventListener('click',()=>{
+    const service=services[i]||'Beauty Service';
+    const msg=encodeURIComponent('Hello Beauty Essence, I would like to book '+service+'.');
+    window.open('https://wa.me/918096658578?text='+msg,'_blank');
+  });
+});
+
+/* ══════════════════════════════════════════
+   HIRING PAGE
+══════════════════════════════════════════ */
+function openHiring(e){
+  if(e)e.preventDefault();
+  document.getElementById('hiringPage').classList.add('open');
+  document.body.style.overflow='hidden';
+  resetHiringForm();
+}
+function closeHiring(){
+  document.getElementById('hiringPage').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeHiring()});
+
+/* hiring form state */
+let hiringData={name:'',phone:'',age:'',area:'',exp:'',services:[],avail:'',cert:''};
+let currentStep=1;const totalSteps=8;
+
+function updateProgress(){
+  const pct=((currentStep-1)/totalSteps)*100;
+  document.getElementById('progressFill').style.width=pct+'%';
+}
+
+function goStep(n){
+  document.getElementById('step'+currentStep).classList.remove('active');
+  currentStep=n;
+  document.getElementById('step'+n).classList.add('active');
+  updateProgress();
+  document.getElementById('hiringPage').scrollTo({top:0,behavior:'smooth'});
+}
+
+function checkTextInput(inputId,btnId){
+  const val=document.getElementById(inputId).value.trim();
+  document.getElementById(btnId).disabled=val.length<2;
+  if(inputId==='inp_name')hiringData.name=val;
+  if(inputId==='inp_phone')hiringData.phone=val;
+  if(inputId==='inp_area')hiringData.area=val;
+}
+
+function selectOption(el,key,value,containerId,btnId) {
+  hiringData[key]=value;
+  document.querySelectorAll('#'+containerId+' .step-option').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById(btnId).disabled=false;
+}
+
+function toggleMulti(el,value,btnId){
+  el.classList.toggle('selected');
+  const selected=[];
+  document.querySelectorAll('#opts_services .step-option.selected').forEach(o=>{
+    const txt=o.innerText.split('\n')[0].trim();
+    selected.push(txt);
+  });
+  hiringData.services=selected;
+  document.getElementById(btnId).disabled=selected.length===0;
+}
+
+function submitHiring(){
+  document.getElementById('stepForm').style.display='none';
+  document.getElementById('hiringSuccess').style.display='block';
+  document.getElementById('progressFill').style.width='100%';
+  sendToWhatsApp();
+}
+
+function sendToWhatsApp(){
+  const d=hiringData;
+  const servicesText=d.services.length?d.services.join(', '):'Not specified';
+  const msg=
+`Hi Mohana! I'm applying for a position at Beauty Essence. 🌸
+
+👩 Name: ${d.name}
+📱 Mobile: ${d.phone}
+🎂 Age Group: ${d.age}
+📍 Area: ${d.area}
+⭐ Experience: ${d.exp}
+💄 Services: ${servicesText}
+⏰ Availability: ${d.avail}
+🎓 Certification: ${d.cert}
+
+I'm excited to be part of the Beauty Essence team!`;
+  window.open('https://wa.me/918096658578?text='+encodeURIComponent(msg),'_blank');
+}
+
+function resetHiringForm(){
+  hiringData={name:'',phone:'',age:'',area:'',exp:'',services:[],avail:'',cert:''};
+  currentStep=1;
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('step1').classList.add('active');
+  document.querySelectorAll('.step-option').forEach(o=>o.classList.remove('selected'));
+  document.querySelectorAll('.step-next').forEach(b=>b.disabled=true);
+  document.getElementById('btn_s1').disabled=true;
+  ['inp_name','inp_phone','inp_area'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  document.getElementById('progressFill').style.width='0%';
+  document.getElementById('stepForm').style.display='block';
+  document.getElementById('hiringSuccess').style.display='none';
+}
+
+/* ── INIT ── */
+try{
+  const existing=localStorage.getItem(STORE_KEY);
+  if(existing){
+    if(!localStorage.getItem('be_reviews_cleared_v2')){
+      localStorage.removeItem(STORE_KEY);
+      localStorage.setItem('be_reviews_cleared_v2','1');
+    }
+  }
+}catch(e){}
+renderReviews();
+</script>
+</body>
+</html>
