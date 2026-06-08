@@ -821,12 +821,9 @@ footer{background:#1C1014;color:rgba(255,255,255,0.45);padding:44px 60px;display
     <p class="section-sub">Real experiences from real people who trust Beauty Essence for their beauty care.</p>
   </div>
   
-  <!-- 💻 PASTED FAMEWALL BLOCK STARTS HERE -->
-  <div style="margin-top: 30px; width: 100%;">
-    <script type="text/javascript" src="https://page.famewall.io/iframeResizer.min.js"></script>
-    <iframe id="famewall-collection-embed" src="https://page.famewall.io/beauty-essense?widget-embed=1" allow="camera;microphone" frameborder="0" scrolling="no" width="100%"></iframe>
-    <script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, "#famewall-collection-embed");</script>
-  </div>
+  <div class="testimonials-grid" id="reviewsContainer"></div>
+</section>
+
   <!-- 💻 PASTED FAMEWALL BLOCK ENDS HERE -->
 
 </section>
@@ -912,35 +909,59 @@ footer{background:#1C1014;color:rgba(255,255,255,0.45);padding:44px 60px;display
 
 <script>
 /* ══════════════════════════════════════════
-   REVIEW SYSTEM
+   REVIEW SYSTEM (WHATSAPP REDIRECT)
 ══════════════════════════════════════════ */
-const STORE_KEY='be_reviews_v1';
-const SEED=[];
+let selectedStar = 0;
 
-function getReviews(){
-  try{const s=localStorage.getItem(STORE_KEY);if(!s){localStorage.setItem(STORE_KEY,JSON.stringify(SEED));return SEED}return JSON.parse(s);}catch{return SEED}
-}
-function saveReviews(arr){try{localStorage.setItem(STORE_KEY,JSON.stringify(arr))}catch{}}
-function getInitial(name){return(name||'?').charAt(0).toUpperCase()}
-function getMonthYear(){const d=new Date();return d.toLocaleDateString('en-GB',{month:'long',year:'numeric'})}
-function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-function hashColor(name){const colors=['#C4849A','#9B5C73','#C8977A','#8B6B6B','#A07585','#D4A5A5'];let h=0;for(let i=0;i<name.length;i++)h=(h*31+name.charCodeAt(i))%colors.length;return colors[Math.abs(h)%colors.length]}
-
-function renderReviews(){
-  const container=document.getElementById('reviewsContainer');
-  const reviews=getReviews();
-  if(!reviews.length){container.innerHTML='<div class="no-reviews">Be the first to leave a review! 🌸</div>';return;}
-  container.innerHTML=reviews.map(r=>`
-    <div class="testimonial-card fade-in visible">
-      <span class="quote-mark">"</span>
-      <p class="testimonial-text">${escHtml(r.comment)}</p>
-      <div class="testimonial-author">
-        <div class="author-avatar" style="background:${hashColor(r.name)}">${getInitial(r.name)}</div>
-        <div><p class="author-name">${escHtml(r.name)}</p><p class="author-service">${escHtml(r.service)}</p><p class="author-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</p></div>
-      </div>
-    </div>`).join('');
+// Handles the visual star selection UI
+function selectStar(n) {
+  selectedStar = n;
+  document.querySelectorAll('.star-btn').forEach((b, i) => b.classList.toggle('lit', i < n));
 }
 
+// Validates fields, formats the text, and redirects to WhatsApp
+function submitReview() {
+  const name = document.getElementById('reviewName').value.trim();
+  const service = document.getElementById('reviewService').value;
+  const comment = document.getElementById('reviewComment').value.trim();
+  const success = document.getElementById('successMsg');
+  const error = document.getElementById('errorMsg');
+  
+  error.style.display = 'none';
+  success.style.display = 'none';
+  
+  // Validation check
+  if (!name || !service || !comment || !selectedStar) {
+    error.style.display = 'block';
+    setTimeout(() => error.style.display = 'none', 3500);
+    return;
+  }
+  
+  // Format the star string for the text message
+  const starRating = '★'.repeat(selectedStar) + '☆'.repeat(5 - selectedStar);
+  
+  // Construct the beautifully structured WhatsApp message
+  const msg = `Hello Beauty Essence! 🌸 I'd like to share my review.\n\n` +
+              `👤 Name: ${name}\n` +
+              `💅 Service Used: ${service}\n` +
+              `⭐ Rating: ${starRating} (${selectedStar}/5)\n` +
+              `💬 Experience: ${comment}`;
+  
+  // Fire open WhatsApp to Mohana's number with the pre-filled text
+  window.open('https://wa.me/918096658578?text=' + encodeURIComponent(msg), '_blank');
+  
+  // Clear the form fields back to normal
+  document.getElementById('reviewName').value = '';
+  document.getElementById('reviewService').value = '';
+  document.getElementById('reviewComment').value = '';
+  selectedStar = 0;
+  document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('lit'));
+  
+  // Show the success confirmation message on the screen
+  success.style.display = 'block';
+  setTimeout(() => success.style.display = 'none', 4000);
+}
+  
 let selectedStar=0;
 function selectStar(n){selectedStar=n;document.querySelectorAll('.star-btn').forEach((b,i)=>b.classList.toggle('lit',i<n));}
 
